@@ -49,7 +49,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.asteroid (
     asteroid_id integer NOT NULL,
-    ateroid_name character varying(100) NOT NULL,
+    name character varying(100) NOT NULL,
     planet_id integer,
     diameter_km integer,
     is_hazardous boolean DEFAULT false
@@ -87,7 +87,7 @@ ALTER SEQUENCE public.asteroid_asteroid_id_seq OWNED BY public.asteroid.asteroid
 CREATE TABLE public.galaxy (
     galaxy_id integer NOT NULL,
     name character varying(20),
-    age_in_million_years integer NOT NULL,
+    age_billion_years numeric(10,2) NOT NULL,
     diameter_light_years integer NOT NULL,
     has_life boolean DEFAULT false,
     description text
@@ -126,7 +126,7 @@ CREATE TABLE public.moon (
     moon_id integer NOT NULL,
     name character varying(20),
     planet_id integer,
-    diameter_km integer,
+    diameter_km integer NOT NULL,
     is_spherical boolean DEFAULT true
 );
 
@@ -163,7 +163,7 @@ CREATE TABLE public.planet (
     planet_id integer NOT NULL,
     name character varying(30),
     star_id integer,
-    radius_km integer,
+    radius_km integer NOT NULL,
     has_atmosphere boolean DEFAULT false,
     surface_description text
 );
@@ -336,7 +336,7 @@ SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
 --
 
 ALTER TABLE ONLY public.asteroid
-    ADD CONSTRAINT asteroid_ateroid_name_key UNIQUE (ateroid_name);
+    ADD CONSTRAINT asteroid_ateroid_name_key UNIQUE (name);
 
 
 --
