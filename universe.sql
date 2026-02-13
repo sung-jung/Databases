@@ -270,6 +270,9 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: asteroid; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.asteroid VALUES (1, 'Pyroclast', 4, 12, true);
+INSERT INTO public.asteroid VALUES (2, 'Caelith', 5, 8, false);
+INSERT INTO public.asteroid VALUES (3, 'Umbra Rock', 12, 25, true);
 
 
 --
@@ -288,6 +291,26 @@ INSERT INTO public.galaxy VALUES (6, 'Messier 87', 13.24, 240000, false, 'Superg
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'Ember', 1, 450, false);
+INSERT INTO public.moon VALUES (2, 'Sulphara', 2, 950, false);
+INSERT INTO public.moon VALUES (3, 'Luna', 3, 3474, true);
+INSERT INTO public.moon VALUES (4, 'Scorcha', 4, 950, false);
+INSERT INTO public.moon VALUES (5, 'Ignis', 5, 1200, false);
+INSERT INTO public.moon VALUES (6, 'Stormis', 6, 2000, true);
+INSERT INTO public.moon VALUES (7, 'Flare', 6, 680, false);
+INSERT INTO public.moon VALUES (8, 'Planktonia', 7, 1100, false);
+INSERT INTO public.moon VALUES (9, 'Bioluma', 7, 900, false);
+INSERT INTO public.moon VALUES (10, 'Verdantis', 8, 2500, true);
+INSERT INTO public.moon VALUES (11, 'Glacien', 9, 820, false);
+INSERT INTO public.moon VALUES (12, 'Frostbite', 9, 600, false);
+INSERT INTO public.moon VALUES (13, 'Aetheris', 10, 5210, true);
+INSERT INTO public.moon VALUES (14, 'Cirrus', 10, 4300, true);
+INSERT INTO public.moon VALUES (15, 'Zephyria', 10, 2100, true);
+INSERT INTO public.moon VALUES (16, 'Oceana', 11, 4800, true);
+INSERT INTO public.moon VALUES (17, 'Tritonis', 11, 3600, true);
+INSERT INTO public.moon VALUES (18, 'Nereid', 11, 1400, false);
+INSERT INTO public.moon VALUES (19, 'Shadow', 12, 1700, false);
+INSERT INTO public.moon VALUES (20, 'Eclipse', 12, 950, false);
 
 
 --
@@ -324,7 +347,7 @@ INSERT INTO public.star VALUES (6, 'Gamma Trianguli', 3, 2.70, 9210, false);
 -- Name: asteroid_asteroid_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.asteroid_asteroid_id_seq', 1, false);
+SELECT pg_catalog.setval('public.asteroid_asteroid_id_seq', 3, true);
 
 
 --
@@ -338,7 +361,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
