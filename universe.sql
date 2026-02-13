@@ -163,7 +163,7 @@ CREATE TABLE public.planet (
     planet_id integer NOT NULL,
     name character varying(30),
     star_id integer,
-    radius_km integer NOT NULL,
+    radius_km numeric(10,1) NOT NULL,
     has_atmosphere boolean DEFAULT false,
     surface_description text
 );
@@ -294,12 +294,30 @@ INSERT INTO public.galaxy VALUES (6, 'Messier 87', 13.24, 240000, false, 'Superg
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 'Mercury', 3, 2439.7, false, 'Mercury is the first planet from the Sun and the smallest in the Solar System');
+INSERT INTO public.planet VALUES (2, 'Venus', 3, 6051.8, true, 'Earth''s "sister planet," similar in size and structure but with a hellish environment');
+INSERT INTO public.planet VALUES (3, 'Earth', 3, 6371.0, true, 'Earth is the third planet from the Sun, known as the "Goldilocks planet" for its perfect conditions supporting life, featuring liquid water, an oxygen-rich atmosphere (mostly nitrogen), and diverse ecosystems, with ~70% surface water and one moon, forming over 4.5 billion years ago.');
+INSERT INTO public.planet VALUES (4, 'Pyron', 1, 6100.0, true, 'A scorched, airless rock world orbiting extremely close to the star. Surface minerals glow faintly from constant stellar radiation.');
+INSERT INTO public.planet VALUES (5, 'Caelus Minor', 1, 4200.0, false, 'Volcanically active with vast lava seas. Tidal forces from the binary companion star drive constant tectonic upheaval.');
+INSERT INTO public.planet VALUES (6, 'Virex', 1, 7800.0, true, 'A dense, orange-clouded world with lightning storms that circle the planet continuously.');
+INSERT INTO public.planet VALUES (7, 'Thalara', 1, 6500.0, true, 'A temperate ocean world in the inner habitable zone. Bioluminescent plankton light up its shallow seas.');
+INSERT INTO public.planet VALUES (8, 'Nareth', 1, 8900.0, true, 'A super-Earth with vast continents and high-gravity conditions. Towering forests of thick-trunked flora dominate the land.');
+INSERT INTO public.planet VALUES (9, 'Crythos', 1, 3900.0, true, 'A frozen moon-sized planet with subsurface oceans kept liquid by tidal heating.');
+INSERT INTO public.planet VALUES (10, 'Helion', 1, 42000.0, true, 'A striped gas giant with a bright ring system reflecting Alpheratz''s blue light.');
+INSERT INTO public.planet VALUES (11, 'Vaelor', 1, 58000.0, true, 'A massive gas giant with dozens of moons, including several potentially habitable ocean moons.');
+INSERT INTO public.planet VALUES (12, 'Umbros', 1, 18000.0, true, 'A dark, distant ice giant with a highly elliptical orbit, glowing faintly from internal heat.');
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 'Alpheratz', 2, 3.60, 13800, true);
+INSERT INTO public.star VALUES (2, 'Mirach', 2, 4.00, 3850, false);
+INSERT INTO public.star VALUES (3, 'Red Giants', 1, 8.00, 5000, false);
+INSERT INTO public.star VALUES (4, 'White Dwarfs', 1, 0.60, 100000, true);
+INSERT INTO public.star VALUES (5, 'Beta Trianguli', 3, 3.52, 7683, true);
+INSERT INTO public.star VALUES (6, 'Gamma Trianguli', 3, 2.70, 9210, false);
 
 
 --
@@ -327,14 +345,14 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
